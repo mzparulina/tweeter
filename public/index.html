@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
 
     <!-- External JS -->
@@ -46,8 +47,19 @@
   </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <div class="content">
-        I rule on my back you rub my tummy i bite you hard play riveting piece on synthesizer keyboard or proudly present butt to human meow in empty rooms for i can haz flee in terror at cucumber discovered on floor. Have secret plans ask to be pet then attack owners hand sniff sniff plan your travel fish i must find my red catnip fishy fish, so soft kitty warm kitty little ball of furr. 
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method="POST" action="/tweets/">
+          <div class="input-wrapper">
+            <textarea name="text" id="tweet-text" class="form-textarea" placeholder="&nbsp;"></textarea>
+            <label for="tweet-text" class="form-label">What are you humming about?</label>
+          </div>
+          <div class="form-controls">
+            <button class="form-btn" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
     </main>
   </body>
 </html>

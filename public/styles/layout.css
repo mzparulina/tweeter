@@ -27,9 +27,9 @@ body {
  */
 
 main {
-  position: absolute;
-  top: 520px;
   background-color: #f4f1ec;
+  width: 90%;
+  margin:auto;
 }
 
 .content {
