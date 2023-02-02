@@ -84,13 +84,14 @@ output.positive {
   color: inherit;
 }
 
-.tweets-container {
+article.tweet {
   border: 1px solid black;
   background-color: transparent;
   padding: 20px;
+  margin: 20px auto;
 }
 
-.tweets-container:hover {
+article.tweet:hover {
   box-shadow: 5px 5px #4056A1;
 }
 

@@ -62,7 +62,7 @@ $(document).ready(function() {
       </header>
       <p class="tweets-body">${tweetBody}</p>
       <footer>
-        <span class="date">${tweetDate}</span>
+        <div class="timeago" datetime="${tweet.created_at}"></div>
         <div id="twitterIcons">
           <span data-id="tweetID" class="heartClick"><i class="fa fa-heart" aria-hclassden="true"></i></span>
           <span class="retweetClick"><i class="fa fa-retweet" aria-hidden="true"></i></span>
