@@ -3,34 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
-// Test / driver code (temporary). Eventually will get this from the server.
 $(document).ready(function() {
-
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ];
 
   const renderTweets = function(tweets) {
     // loops through tweets
@@ -38,7 +11,7 @@ $(document).ready(function() {
     // takes return value and appends it to the tweets container
     for (let i = 0; i < tweets.length; i++) {
       let $tweet = createTweetElement(tweets[i], i);
-      $('.tweets-container').append($tweet);
+      $('.tweets-container').prepend($tweet);
     }
   };
 
@@ -47,10 +20,7 @@ $(document).ready(function() {
     const tweetAvatar = tweet.user.avatars;
     const tweetName = tweet.user.name;
     const tweetBody = tweet.content.text;
-    const d = new Date(Date.now());
-    const date = Math.floor((d  - new Date(tweet.created_at)) / 1000 / 60 / 60 / 24);
-    const tweetDate = date < 0 ? '' : date + ' days ago';
-
+    const tweetDate = timeago.format(tweet.created_at);
 
     let $tweet = `<article class="tweet" id="${id}">
       <header>
@@ -62,7 +32,7 @@ $(document).ready(function() {
       </header>
       <p class="tweets-body">${tweetBody}</p>
       <footer>
-        <div class="timeago" datetime="${tweet.created_at}"></div>
+        <div class="timeago">${tweetDate}</div>
         <div id="twitterIcons">
           <span data-id="tweetID" class="heartClick"><i class="fa fa-heart" aria-hclassden="true"></i></span>
           <span class="retweetClick"><i class="fa fa-retweet" aria-hidden="true"></i></span>
@@ -74,7 +44,6 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  renderTweets(data);
   //handles form submission
   $(".tweet-form").on("submit", function(event) {
     event.preventDefault();
@@ -87,13 +56,20 @@ $(document).ready(function() {
       return;
     }
 
-    $.ajax({
-      method: "POST",
-      url: "/tweets/",
-      data: $(this).serialize()
-    }).done(function() {
+    let data =  $(this).serialize();
+
+    $.post("/tweets/", data, function() {
+      loadTweets();
       $(".form-textarea").val("");
       $(".counter").text(140);
     });
   });
+
+  const loadTweets = () => {
+    $.get('/tweets/', function(data) {
+      renderTweets(data);
+    });
+  };
+
+  loadTweets();
 });
