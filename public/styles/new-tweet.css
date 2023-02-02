@@ -128,3 +128,7 @@ article.tweet footer > div > span {
   color: #4056A1;
   font-size: 16px;
 }
+
+article.tweet footer > div > span:hover {
+  color: gold;
+}
