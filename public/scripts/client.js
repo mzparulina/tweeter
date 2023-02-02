@@ -75,5 +75,25 @@ $(document).ready(function() {
   };
 
   renderTweets(data);
-  
+  //handles form submission
+  $(".tweet-form").on("submit", function(event) {
+    event.preventDefault();
+    if ($(".form-textarea").val().length > 140) {
+      console.log('Character count limit exceeded');
+      return;
+    }
+    if ($(".form-textarea").val().length === 0) {
+      console.log('Input field is empty');
+      return;
+    }
+
+    $.ajax({
+      method: "POST",
+      url: "/tweets/",
+      data: $(this).serialize()
+    }).done(function() {
+      $(".form-textarea").val("");
+      $(".counter").text(140);
+    });
+  });
 });
