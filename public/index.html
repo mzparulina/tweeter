@@ -37,7 +37,7 @@
       </div>
       
     </nav>
-    <header>
+    <header class="top-header">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -45,7 +45,7 @@
       <div>
           <h2>Your Name</h2>
       </div>
-  </header>
+    </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
@@ -60,6 +60,26 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+      </section>
+      <section class="tweets-container">
+        <article class="tweet" id="tweetID">
+          <header>
+            <div class="tweet-header-wrapper">
+              <img class="profileAvatar" src="https://i.imgur.com/73hZDYK.png">
+              <span class="tweets-name">Newton</span>
+            </div>
+            <span class="tweets-handle"><b>@SirIsaac</b></span>
+          </header>
+          <p class="tweets-body">If I have seen further it is by standing on the shoulders of giants</p>
+          <footer>
+            <span class="date">10 days ago</span>
+            <div id="twitterIcons">
+              <span data-id="tweetID" class="heartClick"><i class="fa fa-heart" aria-hclassden="true"></i></span>
+              <span class="retweetClick"><i class="fa fa-retweet" aria-hidden="true"></i></span>
+              <span class="flagClick"><i class="fa fa-flag" aria-hidden="true"></i></span>
+            </div>
+          </footer>
+        </article>
       </section>
     </main>
   </body>

@@ -1,3 +1,7 @@
+.new-tweet {
+  margin-bottom: 1em;
+}
+
 .input-wrapper {
   position: relative;
 }
@@ -78,4 +82,49 @@ output.negative {
 
 output.positive {
   color: inherit;
+}
+
+.tweets-container {
+  border: 1px solid black;
+  background-color: transparent;
+  padding: 20px;
+}
+
+.tweets-container:hover {
+  box-shadow: 5px 5px #4056A1;
+}
+
+article.tweet header, article.tweet footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tweets-handle {
+  opacity: .3;
+  color: #4056A1;
+}
+
+.tweet-header-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+article.tweet header img {
+  margin-right: 15px;
+}
+
+.tweets-body {
+  font-weight: bold;
+}
+
+article.tweet footer {
+  border-top: 3px solid;
+  padding: 15px;
+  font-size: 20px;
+}
+
+article.tweet footer > div > span {
+  color: #4056A1;
+  font-size: 16px;
 }

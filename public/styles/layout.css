@@ -29,7 +29,7 @@ body {
 main {
   background-color: #f4f1ec;
   width: 90%;
-  margin:auto;
+  margin: auto auto 20px auto;
 }
 
 .content {
