@@ -4,6 +4,11 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function() {
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
   const renderTweets = function(tweets) {
     // loops through tweets
@@ -19,7 +24,7 @@ $(document).ready(function() {
     const tweetHandle = tweet.user.handle;
     const tweetAvatar = tweet.user.avatars;
     const tweetName = tweet.user.name;
-    const tweetBody = tweet.content.text;
+    const tweetBody = escape(tweet.content.text);
     const tweetDate = timeago.format(tweet.created_at);
 
     let $tweet = `<article class="tweet" id="${id}">
