@@ -50,6 +50,16 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
+        <p class="error warning1">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span>Your tweet exceeded our 140 limit characters!</span>
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </p>
+        <p class="error warning2">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span>Hmmm. Looks like your tweet is empty!</span>
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </p>
         <form class="tweet-form" method="POST" action="/tweets/">
           <div class="input-wrapper">
             <textarea name="text" id="tweet-text" class="form-textarea" placeholder="&nbsp;"></textarea>

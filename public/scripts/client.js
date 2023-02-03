@@ -10,6 +10,19 @@ $(document).ready(function() {
     return div.innerHTML;
   };
 
+  const textarea = document.getElementById("tweet-text");
+  const limit = 80; //height limit
+
+  textarea.oninput = function(input) {
+    console.log(input.target.value.length)
+    if (input.target.value.length < 140) {
+      $(".error").css("display", "none");
+    }
+
+    textarea.style.height = "";
+    textarea.style.height = Math.min(textarea.scrollHeight, limit) + "px";
+  };
+
   const renderTweets = function(tweets) {
     // loops through tweets
     // calls createTweetElement for each tweet
@@ -53,16 +66,21 @@ $(document).ready(function() {
   $(".tweet-form").on("submit", function(event) {
     event.preventDefault();
     if ($(".form-textarea").val().length > 140) {
-      alert('Character count limit exceeded');
+      $('.new-tweet').slideDown("fast");
+      $(".form-textarea").focus();
+      $(".warning1").css("display", "block");
       return;
     }
     if ($(".form-textarea").val().length === 0 || $(".form-textarea").val().length === null) {
-      alert('Input field is empty');
+      $('.new-tweet').slideDown("fast");
+      $(".form-textarea").focus();
+      $(".warning2").css("display", "block");
       return;
     }
 
+    $(".error-msg").css("display", "none");
+    
     let data =  $(this).serialize();
-
     $.post("/tweets/", data, function() {
       loadTweets();
       $(".form-textarea").val("");

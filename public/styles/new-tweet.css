@@ -40,15 +40,15 @@
   display: inline-block;
 }
 
-/* .form-textarea:not(:placeholder-shown)~label {
+.form-textarea:not(:placeholder-shown)~label {
+  opacity: .65;
+  transform: scale(.85) translateY(-1.5rem) translateX(0.15rem);
+}
+
+/* .form-textarea:focus~label {
   opacity: .65;
   transform: scale(.85) translateY(-0.5rem) translateX(0.15rem);
 } */
-
-.form-textarea:focus~label {
-  opacity: .65;
-  transform: scale(.85) translateY(-0.5rem) translateX(0.15rem);
-}
 
 .form-textarea:not(:placeholder-shown) {
   padding-top: 1.625rem;
@@ -132,4 +132,10 @@ article.tweet footer > div > span {
 
 article.tweet footer > div > span:hover {
   color: gold;
+}
+
+.error {
+  border: 3px solid red;
+  padding: 10px;
+  display: none;
 }
