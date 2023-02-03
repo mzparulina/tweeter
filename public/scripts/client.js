@@ -95,4 +95,11 @@ $(document).ready(function() {
   };
 
   loadTweets();
+  //Jquery for compose button toggle
+
+  $(".new-tweet").hide();
+  $(".compose").click(function() {
+    $('.new-tweet').slideToggle("fast");
+    $(".form-textarea").focus();
+  });
 });

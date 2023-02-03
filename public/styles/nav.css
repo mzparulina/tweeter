@@ -17,8 +17,26 @@ nav div {
   margin: auto 1.5em;
 }
 
-.nav-icon {
-  display: block;
+button.compose {
+  display: flex;
   text-align: center;
+  width: 100%;
+  justify-content: center;
+  background: transparent;
+  border: 0;
   color: red;
+}
+
+.nav-icon {
+  animation: bounce 2s ease infinite;
+}
+
+@keyframes bounce {
+  70% { transform:translateY(0%); }
+  80% { transform:translateY(-15%); }
+  90% { transform:translateY(0%); }
+  95% { transform:translateY(-7%); }
+  97% { transform:translateY(0%); }
+  99% { transform:translateY(-3%); }
+  100% { transform:translateY(0); }
 }
