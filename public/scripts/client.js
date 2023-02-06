@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function() {
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -43,10 +43,10 @@ $(document).ready(function() {
     let $tweet = `<article class="tweet" id="${id}">
       <header>
         <div class="tweet-header-wrapper">
-          <img class="profileAvatar" src="${tweetAvatar}">
+          <img class="profileAvatar" src="${tweetAvatar}"/>
           <span class="tweets-name">${tweetName}</span>
         </div>
-        <span class="tweets-handle"><b${tweetHandle}</b></span>
+        <span class="tweets-handle"><b>${tweetHandle}</b></span>
       </header>
       <p class="tweets-body">${tweetBody}</p>
       <footer>
@@ -96,9 +96,10 @@ $(document).ready(function() {
 
   loadTweets();
   //Jquery for compose button toggle
+  // $(".new-tweet").hide();
 
-  $(".new-tweet").hide();
   $(".compose").click(function() {
+
     $('.new-tweet').slideToggle("fast");
     $(".form-textarea").focus();
   });

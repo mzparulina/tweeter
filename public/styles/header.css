@@ -1,9 +1,29 @@
 header.top-header {
+  /* position: relative;
+  top: 120px; */
+  margin-top: 120px;
   height: 400px;
   width: 100%;
   align-items: center;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  background-color: orange;
   background-image: url('../images/clean-gray-paper.png');
+}
+
+header.top-header > h2 {
+  margin: 0;
+}
+
+@media only screen and (min-width: 1204px) {
+  header.top-header {
+    background: none;
+  }
+
+  header.top-header > div {
+    padding: 30px;
+    background: orange;
+    background-image: url('../images/clean-gray-paper.png');
+  }
 }

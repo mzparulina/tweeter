@@ -29,10 +29,42 @@ body {
 main {
   background-color: #f4f1ec;
   width: 90%;
-  margin: auto auto 20px auto;
+  margin: 30px auto 20px auto;
+  z-index: 1;
+  margin-top: 50px;
 }
 
 .content {
   width: 90%;
   margin: 0 auto;
+}
+
+@media only screen and (min-width: 1204px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "nav nav"
+      "head  main";
+  }
+
+  nav {
+    grid-area: nav;
+    background-color: #4056A1 !important;
+    background-image: none !important;
+  }
+
+  header.top-header {
+    grid-area: head;
+    margin: 30px !important;
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  header.top-header, main {
+    position: relative;
+    top: 120px;
+  }
 }
