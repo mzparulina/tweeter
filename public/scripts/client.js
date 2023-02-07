@@ -12,8 +12,8 @@ $(document).ready(function() {
   const limit = 80; //height limit
 
   textarea.oninput = function(input) {
-    console.log(input.target.value.length)
-    if (input.target.value.length < 140) {
+    // Remove error warning if character count is below 140
+    if (input.target.value.length < 141) {
       $(".error").css("display", "none");
     }
 
@@ -73,12 +73,14 @@ $(document).ready(function() {
    *****************************/
   $(".tweet-form").on("submit", function(event) {
     event.preventDefault();
+    // error validation if character count exceeds 140
     if ($(".form-textarea").val().length > 140) {
       $('.new-tweet').slideDown("fast");
       $(".form-textarea").focus();
       $(".warning1").css("display", "block");
       return;
     }
+    // error validation if no user text input
     if ($(".form-textarea").val().length === 0 || $(".form-textarea").val().length === null) {
       $('.new-tweet').slideDown("fast");
       $(".form-textarea").focus();
