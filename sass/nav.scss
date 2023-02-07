@@ -1,0 +1,51 @@
+nav {
+  height: 120px;
+  width: 100%;
+  background-color: orange;
+  color: #FFFFFF;
+  display: flex;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  justify-content: space-between;
+  background-image: url('../images/clean-gray-paper.png');
+
+  span {
+    font-family: 'Bungee';
+    margin: auto 1.5em;
+  }
+
+  div {
+    font-size: 20px;
+    margin: auto 1.5em;
+  }
+
+  button.compose {
+    display: flex;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+    background: transparent;
+    border: 0;
+    color: red;
+  }
+
+  .nav-icon {
+    animation: bounce 2s ease infinite;
+  }
+  
+  @keyframes bounce {
+    70% { transform:translateY(0%); }
+    80% { transform:translateY(-15%); }
+    90% { transform:translateY(0%); }
+    95% { transform:translateY(-7%); }
+    97% { transform:translateY(0%); }
+    99% { transform:translateY(-3%); }
+    100% { transform:translateY(0); }
+  }
+
+  @media only screen and (min-width: 1204px) {
+    background-color: #4056A1 !important;
+    background-image: none !important;
+  }
+}

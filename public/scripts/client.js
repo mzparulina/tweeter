@@ -43,8 +43,8 @@ $(document).ready(function() {
     let $tweet = `<article class="tweet" id="${id}">
       <header>
         <div class="tweet-header-wrapper">
-          <img class="profileAvatar" src="${tweetAvatar}"/>
-          <span class="tweets-name">${tweetName}</span>
+          <img src="${tweetAvatar}"/>
+          <span >${tweetName}</span>
         </div>
         <span class="tweets-handle"><b>${tweetHandle}</b></span>
       </header>

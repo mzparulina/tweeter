@@ -1,12 +1,15 @@
-.new-tweet {
+section.new-tweet {
   margin-bottom: 1em;
 }
-
-.input-wrapper {
+section.new-tweet .error {
+  border: 3px solid red;
+  padding: 10px;
+  display: none;
+}
+section.new-tweet .input-wrapper {
   position: relative;
 }
-
-.form-textarea {
+section.new-tweet .form-textarea {
   display: block;
   width: 100%;
   /* padding: 0.375rem 0.75rem; */
@@ -20,10 +23,21 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-
-.form-label {
+section.new-tweet .form-textarea:not(:placeholder-shown) ~ label {
+  opacity: 0.65;
+  transform: scale(0.85) translateY(-1.5rem) translateX(0.15rem);
+}
+section.new-tweet .form-textarea:not(:placeholder-shown) {
+  padding-top: 1.625rem;
+  padding-bottom: 0.625rem;
+}
+section.new-tweet .form-textarea:focus {
+  color: #212529;
+  outline: 0;
+}
+section.new-tweet .form-label {
   position: absolute;
   top: 0;
   font-weight: bold;
@@ -34,54 +48,24 @@
   /* left: 0.5rem; */
   pointer-events: none;
   transform-origin: 0 0;
-  transition: all .2s ease-out;
-  color: rgba(0,0,0,.6);
+  transition: all 0.2s ease-out;
+  color: rgba(0, 0, 0, 0.6);
   margin-bottom: 0;
   display: inline-block;
 }
-
-.form-textarea:not(:placeholder-shown)~label {
-  opacity: .65;
-  transform: scale(.85) translateY(-1.5rem) translateX(0.15rem);
-}
-
-/* .form-textarea:focus~label {
-  opacity: .65;
-  transform: scale(.85) translateY(-0.5rem) translateX(0.15rem);
-} */
-
-.form-textarea:not(:placeholder-shown) {
-  padding-top: 1.625rem;
-  padding-bottom: 0.625rem;
-}
-
-.form-textarea:focus {
-  color: #212529;
-  outline: 0;
-}
-
-.form-controls {
+section.new-tweet .form-controls {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: 'Bungee';
-  margin-top: .5em;
+  font-family: "Bungee";
+  margin-top: 0.5em;
 }
-
-.form-btn {
+section.new-tweet .form-btn {
   border-radius: 0.25rem;
   border: 1px solid;
   padding: 5px;
   background-color: #4056A1;
   color: #FFFFFF;
-}
-
-output.negative {
-  color: red;
-}
-
-output.positive {
-  color: inherit;
 }
 
 article.tweet {
@@ -90,54 +74,40 @@ article.tweet {
   padding: 20px;
   margin: 20px auto;
 }
-
-article.tweet:hover {
-  box-shadow: 5px 5px #4056A1;
-}
-
 article.tweet header, article.tweet footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
-.tweets-handle {
-  opacity: .3;
-  color: #4056A1;
+article.tweet header div > img {
+  margin-right: 10px;
 }
-
-.tweet-header-wrapper {
+article.tweet .tweet-header-wrapper {
   display: flex;
   align-items: center;
 }
-
-article.tweet header img {
-  margin-right: 15px;
+article.tweet .tweets-handle {
+  opacity: 0.3;
+  color: #4056A1;
 }
-
-.tweets-body {
+article.tweet .tweets-body {
   font-weight: bold;
 }
-
 article.tweet footer {
   border-top: 3px solid;
   padding: 15px;
   font-size: 20px;
 }
-
-article.tweet footer > div > span {
+article.tweet footer div > span {
   color: #4056A1;
   font-size: 16px;
 }
-
-article.tweet footer > div > span:hover {
+article.tweet footer div > span:hover {
   color: gold;
 }
 
-.error {
-  border: 3px solid red;
-  padding: 10px;
-  display: none;
+article.tweet:hover {
+  box-shadow: 5px 5px #4056A1;
 }
 
 @media only screen and (min-width: 1204px) {

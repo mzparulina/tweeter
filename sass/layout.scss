@@ -6,7 +6,6 @@
 html {
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -14,40 +13,48 @@ html {
 /*
  * Global layout stuff
  */
+
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: "Source Sans Pro";
+  font-family: 'Source Sans Pro';
   width: 100%;
+
   /*
   * Additional CSS can be defined below or in other CSS files, as per instructions
   */
-}
-body main {
-  background-color: #f4f1ec;
-  width: 90%;
-  margin: 30px auto 20px auto;
-  z-index: 1;
-  margin-top: 50px;
-}
-@media only screen and (min-width: 1204px) {
-  body {
+
+  main {
+    background-color: #f4f1ec;
+    width: 90%;
+    margin: 30px auto 20px auto;
+    z-index: 1;
+    margin-top: 50px;
+  }
+
+  @media only screen and (min-width: 1204px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "nav nav" "head  main";
-  }
-  body nav {
-    grid-area: nav;
-  }
-  body header.top-header {
-    grid-area: head;
-  }
-  body main {
-    grid-area: main;
-  }
-  body header.top-header, body main {
-    position: relative;
-    top: 120px;
+    grid-template-areas:
+      "nav nav"
+      "head  main";
+
+    nav {
+      grid-area: nav;
+    }
+
+    header.top-header {
+      grid-area: head;
+    }
+
+    main {
+      grid-area: main;
+    }
+
+    header.top-header, main {
+      position: relative;
+      top: 120px;
+    }
   }
 }
