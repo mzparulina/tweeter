@@ -28,6 +28,10 @@ This project incorporates HTML, CSS, SASS, JS, jQuery and AJAX front-end skills,
   
     !["Tweeter Form Toggle"](https://github.com/mzparulina/tweeter/blob/master/docs/tweeter_toggle_form.png)
 
+  - Scroll to the Top Button
+
+    !["Tweeter Scroll Top Button"](https://github.com/mzparulina/tweeter/blob/master/docs/tweeter_toggle_button.gif)
+
   - Sass
 
 ## Final Product

@@ -13,5 +13,7 @@ $(document).ready(function() {
    * Stretch * Second Toggle Button
    *****************************/
   
-
+  $(".toggle-btn").click(function() {
+    $(window).scrollTop(0);
+  });
 });

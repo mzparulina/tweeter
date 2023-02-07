@@ -31,6 +31,22 @@ body main {
   z-index: 1;
   margin-top: 50px;
 }
+body main .toggle-btn {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-size: 40px;
+  color: #fff;
+  border-radius: 50%;
+  background-color: red;
+  margin: 10px;
+  border: none;
+  padding: 10px 15px;
+  opacity: 0.5;
+}
+body main .toggle-btn:hover {
+  opacity: 1;
+}
 @media only screen and (min-width: 1204px) {
   body {
     display: grid;
