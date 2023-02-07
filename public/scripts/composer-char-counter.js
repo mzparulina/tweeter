@@ -1,5 +1,9 @@
 $(document).ready(function() {
-  // --- our code goes here ---
+
+  /******************************
+   * Character counter
+  *****************************/
+ 
   $('#tweet-text').on('keyup', function(e) {
     let input = $(this).val();
     input = 140 - input.length;

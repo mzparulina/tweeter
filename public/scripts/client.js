@@ -1,8 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
 $(document).ready(function() {
   const escape = function(str) {
     let div = document.createElement("div");
@@ -10,6 +5,9 @@ $(document).ready(function() {
     return div.innerHTML;
   };
 
+  /******************************
+   * Auto Height TextArea
+   *****************************/
   const textarea = document.getElementById("tweet-text");
   const limit = 80; //height limit
 
@@ -23,6 +21,10 @@ $(document).ready(function() {
     textarea.style.height = Math.min(textarea.scrollHeight, limit) + "px";
   };
 
+  /******************************
+   * Calling all Tweets
+   *****************************/
+
   const renderTweets = function(tweets) {
     // loops through tweets
     // calls createTweetElement for each tweet
@@ -32,6 +34,10 @@ $(document).ready(function() {
       $('.tweets-container').prepend($tweet);
     }
   };
+
+  /******************************
+   * Create a Tweet
+   *****************************/
 
   const createTweetElement = function(tweet, id) {
     const tweetHandle = tweet.user.handle;
@@ -62,7 +68,9 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  //handles form submission
+  /******************************
+   * Handles Form Submission
+   *****************************/
   $(".tweet-form").on("submit", function(event) {
     event.preventDefault();
     if ($(".form-textarea").val().length > 140) {
@@ -88,6 +96,9 @@ $(document).ready(function() {
     });
   });
 
+  /******************************
+   * Load all tweets
+   *****************************/
   const loadTweets = () => {
     $.get('/tweets/', function(data) {
       renderTweets(data);
@@ -95,12 +106,5 @@ $(document).ready(function() {
   };
 
   loadTweets();
-  //Jquery for compose button toggle
-  // $(".new-tweet").hide();
 
-  $(".compose").click(function() {
-
-    $('.new-tweet').slideToggle("fast");
-    $(".form-textarea").focus();
-  });
 });

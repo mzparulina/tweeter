@@ -67,6 +67,12 @@ section.new-tweet .form-btn {
   background-color: #4056A1;
   color: #FFFFFF;
 }
+section.new-tweet output.negative {
+  color: red;
+}
+section.new-tweet output.positive {
+  color: inherit;
+}
 
 article.tweet {
   border: 1px solid black;

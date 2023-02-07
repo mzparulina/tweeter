@@ -75,6 +75,14 @@ section.new-tweet {
     background-color: #4056A1;
     color: #FFFFFF;
   }
+
+  output.negative {
+    color: red;
+  }
+  
+  output.positive {
+    color: inherit;
+  }
 }
 
 article.tweet {
