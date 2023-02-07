@@ -2,7 +2,7 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+This project incorporates HTML, CSS, SASS, JS, jQuery and AJAX front-end skills, and Node, Express back-end skills.
 
 ## Getting Started
 
@@ -16,3 +16,29 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Starting the project
+  - npm
+    - npm run local 
+  - sass
+    -  npm run sass-watch
+
+## Stretch Features
+  - Form Toggle
+  
+    !["Tweeter Form Toggle"](https://github.com/mzparulina/tweeter/blob/master/docs/tweeter_toggle_form.png)
+
+  - Sass
+
+## Final Product
+  - Compose Tweet
+
+    !["Tweeter Compose Tweet"](https://github.com/mzparulina/tweeter/blob/master/docs/tweeter_compose.png)
+
+  - Desktop View
+
+    !["Tweeter Desktop View"](https://github.com/mzparulina/tweeter/blob/master/docs/tweeter_home.png)
+
+  - Mobile View
+
+    !["Tweeter Mobile View"](https://github.com/mzparulina/tweeter/blob/master/docs/tweeter_mobileview.png)
