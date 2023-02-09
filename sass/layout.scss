@@ -43,11 +43,12 @@ body {
       margin: 10px;
       border: none;
       padding: 10px 15px;
-      opacity: .5;
+      opacity: .8;
+      display: none;
     }
 
     .toggle-btn:hover {
-      opacity: 1;
+      opacity: .5;
     }
   }
 

@@ -8,18 +8,14 @@ $(document).ready(function() {
   /******************************
    * Auto Height TextArea
    *****************************/
-  const textarea = document.getElementById("tweet-text");
   const limit = 80; //height limit
 
-  textarea.oninput = function(input) {
-    // Remove error warning if character count is below 140
-    if (input.target.value.length < 141) {
+  $('#tweet-text').on('input', function(e) {
+    if (e.target.value.length < 141) {
       $(".error").css("display", "none");
     }
-
-    textarea.style.height = "";
-    textarea.style.height = Math.min(textarea.scrollHeight, limit) + "px";
-  };
+    this.css("height", Math.min(this.scrollHeight, limit) + "px");
+  });
 
   /******************************
    * Calling all Tweets
@@ -90,11 +86,18 @@ $(document).ready(function() {
 
     $(".error-msg").css("display", "none");
     
-    let data =  $(this).serialize();
-    $.post("/tweets/", data, function() {
-      loadTweets();
+    let data = $(this).serialize();
+    let posting = $.post("/tweets/", data);
+    posting.done(function() {
+      $('.tweets-container').empty();
+
       $(".form-textarea").val("");
       $(".counter").text(140);
+      loadTweets();
+
+    });
+    posting.fail(function(response) {
+      $(".container").html(response.responseText);
     });
   });
 

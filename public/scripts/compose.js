@@ -12,6 +12,10 @@ $(document).ready(function() {
   /******************************
    * Stretch * Second Toggle Button
    *****************************/
+  $(window).scroll(function() {
+    console.log('test');
+    $(".toggle-btn").css('display', 'block');
+  });
   
   $(".toggle-btn").click(function() {
     $(window).scrollTop(0);
